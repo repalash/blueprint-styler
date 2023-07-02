@@ -16,9 +16,19 @@
 
 import * as React from "react";
 
-import { Alignment, AnchorButton, Button, ButtonGroup, Classes, H5, Icon, Intent, Switch } from "@blueprintjs/core";
+import {
+    Alignment,
+    AnchorButton,
+    Button,
+    ButtonGroup,
+    Classes,
+    H5,
+    Icon,
+    Intent,
+    Switch,
+    Tooltip
+} from "@blueprintjs/core";
 import { Example, ExampleProps, handleBooleanChange, handleValueChange } from "@blueprintjs/docs-theme";
-import { Tooltip2 } from "@blueprintjs/popover2";
 
 import { AlignmentSelect } from "./common/alignmentSelect";
 import { IntentSelect } from "./common/intentSelect";
@@ -62,7 +72,7 @@ export class ButtonGroupExample extends React.PureComponent<ExampleProps, IButto
         const buttonProps = { intent };
 
         const intentLabelInfo = (
-            <Tooltip2
+            <Tooltip
                 content={
                     <span className={Classes.TEXT_SMALL}>
                         Intents are set individually on each button <br />
@@ -78,7 +88,7 @@ export class ButtonGroupExample extends React.PureComponent<ExampleProps, IButto
                         <Icon className={Classes.TEXT_MUTED} icon="info-sign" size={12} />
                     </span>
                 </span>
-            </Tooltip2>
+            </Tooltip>
         );
         const options = (
             <>

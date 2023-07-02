@@ -11,7 +11,7 @@ import { changeStyle, defaultStyleName, styleManifest, styleOptions } from '../s
 FocusStyleManager.onlyShowFocusOnTabs();
 
 const DARK_THEME = Classes.DARK;
-const LIGHT_THEME = "bp4-light"; // not a cannon blueprint class
+const LIGHT_THEME = "bp5-light"; // not a cannon blueprint class
 const THEME_LOCAL_STORAGE_KEY = "blueprint-docs-theme";
 
 /** Return the current theme className. */
@@ -106,9 +106,9 @@ function BlueprintStylerApp() {
                             fill
                         />
 
-                        {/* <div className="bp4-input-group" style={{ marginBottom: 16 }} >
+                        {/* <div className="bp5-input-group" style={{ marginBottom: 16 }} >
                             <Icon icon="search" />
-                            <input type="text" className="bp4-input" placeholder="Search" />
+                            <input type="text" className="bp5-input" placeholder="Search" />
                         </div> */}
 
                     </header>

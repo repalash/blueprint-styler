@@ -43,12 +43,11 @@ import {
 import {
     Classes,
     Placement,
-    PlacementOptions,
-    Popover2,
-    Popover2InteractionKind,
-    Popover2SharedProps,
+    Popover,
+    PopoverInteractionKind,
+    PopoverSharedProps,
     StrictModifierNames,
-} from "@blueprintjs/popover2";
+} from "@blueprintjs/core";
 
 import FilmSelect from "../../common/filmSelect";
 
@@ -61,28 +60,28 @@ const INTERACTION_KINDS = [
     { label: "Hover (target only)", value: "hover-target" },
 ];
 
-export interface IPopover2ExampleState {
+export interface PopoverExampleState {
     boundary?: "scrollParent" | "body" | "clippingParents";
     buttonText: string;
     canEscapeKeyClose?: boolean;
     exampleIndex?: number;
     hasBackdrop?: boolean;
     inheritDarkTheme?: boolean;
-    interactionKind?: Popover2InteractionKind;
+    interactionKind?: PopoverInteractionKind;
     isControlled: boolean;
     isOpen?: boolean;
     matchTargetWidth: boolean;
     minimal?: boolean;
-    modifiers?: Popover2SharedProps<React.HTMLProps<HTMLElement>>["modifiers"];
+    modifiers?: PopoverSharedProps<React.HTMLProps<HTMLElement>>["modifiers"];
     placement?: Placement;
     sliderValue?: number;
     usePortal?: boolean;
 }
 
-export class Popover2Example extends React.PureComponent<ExampleProps, IPopover2ExampleState> {
-    public static displayName = "Popover2Example";
+export class PopoverExample extends React.PureComponent<ExampleProps, PopoverExampleState> {
+    public static displayName = "PopoverExample";
 
-    public state: IPopover2ExampleState = {
+    public state: PopoverExampleState = {
         boundary: "scrollParent",
         buttonText: "Popover target",
         canEscapeKeyClose: true,
@@ -112,14 +111,14 @@ export class Popover2Example extends React.PureComponent<ExampleProps, IPopover2
 
     private handleExampleIndexChange = handleNumberChange(exampleIndex => this.setState({ exampleIndex }));
 
-    private handleInteractionChange = handleValueChange((interactionKind: Popover2InteractionKind) => {
+    private handleInteractionChange = handleValueChange((interactionKind: PopoverInteractionKind) => {
         const hasBackdrop = this.state.hasBackdrop && interactionKind === "click";
         this.setState({ interactionKind, hasBackdrop });
     });
 
     private handlePlacementChange = handleValueChange((placement: Placement) => this.setState({ placement }));
 
-    private handleBoundaryChange = handleValueChange((boundary: IPopover2ExampleState["boundary"]) =>
+    private handleBoundaryChange = handleValueChange((boundary: PopoverExampleState["boundary"]) =>
         this.setState({ boundary }),
     );
 
@@ -165,8 +164,8 @@ export class Popover2Example extends React.PureComponent<ExampleProps, IPopover2
         return (
             <Example options={this.renderOptions()} {...this.props}>
                 <div className="docs-popover2-example-scroll" ref={this.centerScroll}>
-                    <Popover2
-                        popoverClassName={exampleIndex <= 2 ? Classes.POPOVER2_CONTENT_SIZING : ""}
+                    <Popover
+                        popoverClassName={exampleIndex <= 2 ? Classes.POPOVER_CONTENT_SIZING : ""}
                         portalClassName="foo"
                         {...popoverProps}
                         boundary={
@@ -181,7 +180,7 @@ export class Popover2Example extends React.PureComponent<ExampleProps, IPopover2
                         content={this.getContents(exampleIndex)}
                     >
                         <Button intent={Intent.PRIMARY} text={buttonText} tabIndex={0} />
-                    </Popover2>
+                    </Popover>
                     <p>
                         Scroll around this container to experiment
                         <br />
@@ -210,7 +209,7 @@ export class Popover2Example extends React.PureComponent<ExampleProps, IPopover2
                     <HTMLSelect
                         value={this.state.placement}
                         onChange={this.handlePlacementChange}
-                        options={PlacementOptions}
+                        // options={PlacementOptions}
                     />
                 </FormGroup>
                 <Label>
@@ -300,10 +299,10 @@ export class Popover2Example extends React.PureComponent<ExampleProps, IPopover2
                 <H5>Confirm deletion</H5>
                 <p>Are you sure you want to delete these items? You won't be able to recover them.</p>
                 <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 15 }}>
-                    <Button className={Classes.POPOVER2_DISMISS} style={{ marginRight: 10 }}>
+                    <Button className={Classes.POPOVER_DISMISS} style={{ marginRight: 10 }}>
                         Cancel
                     </Button>
-                    <Button intent={Intent.DANGER} className={Classes.POPOVER2_DISMISS}>
+                    <Button intent={Intent.DANGER} className={Classes.POPOVER_DISMISS}>
                         Delete
                     </Button>
                 </div>

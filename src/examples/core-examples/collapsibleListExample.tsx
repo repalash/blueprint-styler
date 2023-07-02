@@ -27,7 +27,7 @@ import * as React from "react";
 import {
     Boundary,
     Classes,
-    CollapsibleList,
+    // CollapsibleList,
     H5,
     Label,
     MenuItem,
@@ -82,19 +82,19 @@ export class CollapsibleListExample extends React.PureComponent<ExampleProps, IC
 
         return (
             <Example options={options} {...this.props}>
-                <CollapsibleList
-                    {...this.state}
-                    className={Classes.BREADCRUMBS}
-                    dropdownTarget={<span className={Classes.BREADCRUMBS_COLLAPSED} />}
-                    visibleItemRenderer={this.renderBreadcrumb}
-                >
-                    <MenuItem icon="folder-close" text="All files" href="#" />
-                    <MenuItem icon="folder-close" text="Users" href="#" />
-                    <MenuItem icon="folder-close" text="Jane Person" href="#" />
-                    <MenuItem icon="folder-close" text="My documents" href="#" />
-                    <MenuItem icon="folder-close" text="Classy dayjob" href="#" />
-                    <MenuItem icon="document" text="How to crush it" />
-                </CollapsibleList>
+                {/*<CollapsibleList*/}
+                {/*    {...this.state}*/}
+                {/*    className={Classes.BREADCRUMBS}*/}
+                {/*    dropdownTarget={<span className={Classes.BREADCRUMBS_COLLAPSED} />}*/}
+                {/*    visibleItemRenderer={this.renderBreadcrumb}*/}
+                {/*>*/}
+                {/*    <MenuItem icon="folder-close" text="All files" href="#" />*/}
+                {/*    <MenuItem icon="folder-close" text="Users" href="#" />*/}
+                {/*    <MenuItem icon="folder-close" text="Jane Person" href="#" />*/}
+                {/*    <MenuItem icon="folder-close" text="My documents" href="#" />*/}
+                {/*    <MenuItem icon="folder-close" text="Classy dayjob" href="#" />*/}
+                {/*    <MenuItem icon="document" text="How to crush it" />*/}
+                {/*</CollapsibleList>*/}
             </Example>
         );
     }

@@ -28,7 +28,7 @@ import {
     Slider,
 } from "@blueprintjs/core";
 import { Example, ExampleProps, handleStringChange } from "@blueprintjs/docs-theme";
-import { Breadcrumbs2 } from "@blueprintjs/popover2";
+import { Breadcrumbs } from "@blueprintjs/core";
 
 export interface Breadcrumbs2ExampleState {
     collapseFrom: Boundary;
@@ -112,7 +112,7 @@ export class Breadcrumbs2Example extends React.PureComponent<ExampleProps, Bread
         return (
             <Example options={options} {...this.props}>
                 <Card elevation={0} style={{ width: `${width}%` }}>
-                    <Breadcrumbs2
+                    <Breadcrumbs
                         collapseFrom={collapseFrom}
                         items={alwaysRenderOverflow ? ITEMS_FOR_ALWAYS_RENDER : ITEMS}
                         currentBreadcrumbRenderer={renderCurrentAsInput ? this.renderBreadcrumbInput : undefined}

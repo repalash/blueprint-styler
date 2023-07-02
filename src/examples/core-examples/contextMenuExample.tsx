@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview This component is DEPRECATED, and the code is frozen.
- * All changes & bugfixes should be made to ContextMenu2 instead.
+ * All changes & bugfixes should be made to ContextMenu instead.
  */
 
 
@@ -24,7 +24,7 @@
 import classNames from "classnames";
 import * as React from "react";
 
-import { Classes, ContextMenu, ContextMenuTarget, Menu, MenuDivider, MenuItem } from "@blueprintjs/core";
+import { Classes, ContextMenu, Menu, MenuDivider, MenuItem, showContextMenu } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
 
 /**
@@ -44,18 +44,20 @@ class GraphNode extends React.PureComponent<any, { isContextMenuOpen: boolean }>
         // must prevent default to cancel parent's context menu
         e.preventDefault();
         // invoke static API, getting coordinates from mouse event
-        ContextMenu.show(
-            <Menu>
-                <MenuItem icon="search-around" text="Search around..." />
-                <MenuItem icon="search" text="Object viewer" />
-                <MenuItem icon="graph-remove" text="Remove" />
-                <MenuItem icon="group-objects" text="Group" />
-                <MenuDivider />
-                <MenuItem disabled={true} text="Clicked on node" />
-            </Menu>,
-            { left: e.clientX, top: e.clientY },
-            () => this.setState({ isContextMenuOpen: false }),
-        );
+        showContextMenu({
+            content: (
+                <Menu>
+                    <MenuItem icon="search-around" text="Search around..." />
+                    <MenuItem icon="search" text="Object viewer" />
+                    <MenuItem icon="graph-remove" text="Remove" />
+                    <MenuItem icon="group-objects" text="Group" />
+                    <MenuDivider />
+                    <MenuItem disabled={true} text="Clicked on node" />
+                </Menu>
+            ),
+            targetOffset: { left: e.clientX, top: e.clientY },
+            onClose: () => this.setState({ isContextMenuOpen: false }),
+        });
         // indicate that context menu is open so we can add a CSS class to this element
         this.setState({ isContextMenuOpen: true });
     };
@@ -64,7 +66,7 @@ class GraphNode extends React.PureComponent<any, { isContextMenuOpen: boolean }>
 /**
  * This component uses the decorator API and implements the IContextMenuTarget interface.
  */
-@ContextMenuTarget
+
 export class ContextMenuExample extends React.PureComponent<ExampleProps> {
     public render() {
         return (

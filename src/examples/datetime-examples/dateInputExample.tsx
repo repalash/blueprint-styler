@@ -33,7 +33,7 @@ import { PrecisionSelect } from "./common/precisionSelect";
 
 export interface IDateInputExampleState {
     closeOnSelection: boolean;
-    date: Date | null;
+    date: string | null;
     disabled: boolean;
     fill: boolean;
     format: DateFormatProps;
@@ -83,7 +83,7 @@ export class DateInputExample extends React.PureComponent<ExampleProps, IDateInp
                 <DateInput
                     {...spreadProps}
                     {...format}
-                    defaultValue={new Date()}
+                    defaultValue={new Date().toDateString()}
                     onChange={this.handleDateChange}
                     popoverProps={{ position: Position.BOTTOM }}
                     timePickerProps={
@@ -92,7 +92,7 @@ export class DateInputExample extends React.PureComponent<ExampleProps, IDateInp
                             : { showArrowButtons: showTimeArrowButtons, precision: timePrecision }
                     }
                 />
-                <MomentDate date={date} />
+                <MomentDate date={date as any} />
             </Example>
         );
     }
@@ -137,7 +137,7 @@ export class DateInputExample extends React.PureComponent<ExampleProps, IDateInp
         );
     }
 
-    private handleDateChange = (date: Date | null) => this.setState({ date });
+    private handleDateChange = (date: string | null) => this.setState({ date });
 
     private handleFormatChange = (format: DateFormatProps) => this.setState({ format });
 }

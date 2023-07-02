@@ -18,13 +18,13 @@ import * as React from "react";
 
 import { Button, Callout, Classes as CoreClasses, Switch } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Classes, Popover2 } from "@blueprintjs/popover2";
+import { Classes, Popover } from "@blueprintjs/core";
 
-export class Popover2DismissExample extends React.PureComponent<
+export class PopoverDismissExample extends React.PureComponent<
     ExampleProps,
     { captureDismiss: boolean; isOpen: boolean }
 > {
-    public static displayName = "Popover2DismissExample";
+    public static displayName = "PopoverDismissExample";
 
     public state = { captureDismiss: true, isOpen: true };
 
@@ -37,7 +37,7 @@ export class Popover2DismissExample extends React.PureComponent<
     public render() {
         return (
             <Example options={false} {...this.props}>
-                <Popover2
+                <Popover
                     inheritDarkTheme={false}
                     // don't autofocus or enforce focus because it is open by default on the page,
                     // and that will make unexpectedly users scroll to this example
@@ -58,7 +58,7 @@ export class Popover2DismissExample extends React.PureComponent<
                                     label="Capture dismiss"
                                     onChange={this.handleDismissChange}
                                 />
-                                <Popover2
+                                <Popover
                                     autoFocus={false}
                                     enforceFocus={false}
                                     captureDismiss={this.state.captureDismiss}
@@ -69,7 +69,7 @@ export class Popover2DismissExample extends React.PureComponent<
                                         <Button
                                             {...p}
                                             active={isOpen}
-                                            elementRef={ref}
+                                            ref={ref}
                                             text="Nested"
                                             rightIcon="caret-right"
                                         />
@@ -79,7 +79,7 @@ export class Popover2DismissExample extends React.PureComponent<
                         </>
                     }
                     renderTarget={({ isOpen, ref, ...p }) => (
-                        <Button {...p} active={isOpen} elementRef={ref} intent="primary" text="Try it out" />
+                        <Button {...p} active={isOpen} ref={ref} intent="primary" text="Try it out" />
                     )}
                 />
                 <p className="docs-reopen-message">
@@ -104,13 +104,13 @@ const POPOVER_CONTENTS = (
     <>
         <div>
             <Button text="Default" />
-            <Button className={Classes.POPOVER2_DISMISS} intent="danger" text="Dismiss" />
-            <Button className={Classes.POPOVER2_DISMISS} intent="danger" text="No dismiss" disabled={true} />
+            <Button className={Classes.POPOVER_DISMISS} intent="danger" text="Dismiss" />
+            <Button className={Classes.POPOVER_DISMISS} intent="danger" text="No dismiss" disabled={true} />
         </div>
-        <Callout intent="warning" className={Classes.POPOVER2_DISMISS}>
+        <Callout intent="warning" className={Classes.POPOVER_DISMISS}>
             <p>Click callout to dismiss.</p>
             <div>
-                <Button className={Classes.POPOVER2_DISMISS_OVERRIDE} intent="success" text="Dismiss override" />
+                <Button className={Classes.POPOVER_DISMISS_OVERRIDE} intent="success" text="Dismiss override" />
                 <Button disabled={true} text="Nope" />
             </div>
         </Callout>

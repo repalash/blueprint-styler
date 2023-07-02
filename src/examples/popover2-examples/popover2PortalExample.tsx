@@ -18,9 +18,9 @@ import * as React from "react";
 
 import { Button, Code, H5, Switch } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Popover2, Popover2Props } from "@blueprintjs/popover2";
+import { Popover, PopoverProps } from "@blueprintjs/core";
 
-const POPOVER2_PROPS: Partial<Popover2Props> = {
+const POPOVER2_PROPS: Partial<PopoverProps> = {
     autoFocus: false,
     enforceFocus: false,
     modifiers: {
@@ -31,14 +31,14 @@ const POPOVER2_PROPS: Partial<Popover2Props> = {
     popoverClassName: "docs-popover2-portal-example-popover",
 };
 
-export interface IPopover2PortalExampleState {
+export interface PopoverPortalExampleState {
     isOpen: boolean;
 }
 
-export class Popover2PortalExample extends React.PureComponent<ExampleProps, IPopover2PortalExampleState> {
-    public static displayName = "Popover2PortalExample";
+export class PopoverPortalExample extends React.PureComponent<ExampleProps, PopoverPortalExampleState> {
+    public static displayName = "PopoverPortalExample";
 
-    public state: IPopover2PortalExampleState = {
+    public state: PopoverPortalExampleState = {
         isOpen: true,
     };
 
@@ -73,13 +73,13 @@ export class Popover2PortalExample extends React.PureComponent<ExampleProps, IPo
                     onScroll={this.syncScrollLeft}
                 >
                     <div className="docs-popover2-portal-example-scroll-content">
-                        <Popover2
+                        <Popover
                             {...POPOVER2_PROPS}
                             content="I am in a Portal (default)."
                             isOpen={this.state.isOpen}
                             usePortal={true}
                             renderTarget={({ isOpen, ref, ...p }) => (
-                                <Code {...p} elementRef={ref}>{`usePortal={true}`}</Code>
+                                <Code {...p} ref={ref}>{`usePortal={true}`}</Code>
                             )}
                         />
                     </div>
@@ -90,7 +90,7 @@ export class Popover2PortalExample extends React.PureComponent<ExampleProps, IPo
                     onScroll={this.syncScrollRight}
                 >
                     <div className="docs-popover2-portal-example-scroll-content">
-                        <Popover2
+                        <Popover
                             {...POPOVER2_PROPS}
                             content="I am an inline popover."
                             isOpen={this.state.isOpen}
@@ -99,7 +99,7 @@ export class Popover2PortalExample extends React.PureComponent<ExampleProps, IPo
                                 preventOverflow: { enabled: false },
                             }}
                             renderTarget={({ isOpen, ref, ...p }) => (
-                                <Code {...p} elementRef={ref}>{`usePortal={false}`}</Code>
+                                <Code {...p} ref={ref}>{`usePortal={false}`}</Code>
                             )}
                         />
                     </div>

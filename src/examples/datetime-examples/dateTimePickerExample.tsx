@@ -24,7 +24,7 @@
 import * as React from "react";
 
 import { Classes } from "@blueprintjs/core";
-import { DateTimePicker } from "@blueprintjs/datetime";
+import { DatePicker } from "@blueprintjs/datetime";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
 
 import { MomentDate } from "./common/momentDate";
@@ -35,7 +35,7 @@ export class DateTimePickerExample extends React.PureComponent<ExampleProps, { d
     public render() {
         return (
             <Example options={false} {...this.props}>
-                <DateTimePicker
+                <DatePicker timePrecision="minute"
                     className={Classes.ELEVATION_1}
                     value={this.state.date}
                     timePickerProps={{ precision: "second", useAmPm: true }}

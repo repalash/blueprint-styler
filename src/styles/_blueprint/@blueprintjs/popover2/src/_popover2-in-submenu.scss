@@ -8,7 +8,7 @@
   .#{$ns}-popover2-target {
     display: block;
 
-    // MenuItem doesn't render Popover2, only Popover, so we don't need the styles
+    // MenuItem doesn't render Popover, only Popover, so we don't need the styles
     // which render open submenu items as hovered/selected as we do in _submenu.scss
   }
 

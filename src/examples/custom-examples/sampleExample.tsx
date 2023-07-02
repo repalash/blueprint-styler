@@ -3,11 +3,11 @@ import {
     Alert, AlertProps, Button, ButtonGroup, Callout, Card, Checkbox, Classes,
     ControlGroup, Dialog, DialogProps, Divider, Drawer, DrawerProps, FormGroup, H2, H3, H5,
     HTMLSelect, Icon, InputGroup, Intent, Menu, MenuDivider, MenuItem, NumericInput, ProgressBar,
-    Radio, RadioGroup, Slider, Spinner, Switch, Tab, Tabs, TextArea, Toast, Toaster, ToastProps
+    Radio, RadioGroup, Slider, Spinner, Switch, Tab, Tabs, TextArea, Toast, OverlayToaster, ToastProps
 } from "@blueprintjs/core";
 import { Example, ExampleProps, handleStringChange } from "@blueprintjs/docs-theme";
 import { DateRangeInput2 } from "@blueprintjs/datetime2";
-import { Popover2, Popover2Props, Breadcrumbs2 } from "@blueprintjs/popover2";
+import { Popover, PopoverProps, Breadcrumbs } from "@blueprintjs/core";
 import { capitalizeFirstLetter, DivFC, intents, noOp, randomIcon, randomLorem, TextSample, vibes } from "./utils";
 
 export class SampleExample extends React.PureComponent<ExampleProps> {
@@ -17,7 +17,7 @@ export class SampleExample extends React.PureComponent<ExampleProps> {
 
                 <div className="content-sample">
 
-                    <Breadcrumbs2 items={[
+                    <Breadcrumbs items={[
                         { onClick: noOp, text: "Bread" },
                         { onClick: noOp, text: "Crumbs" },
                         { text: "Sample" },
@@ -145,7 +145,7 @@ const CalloutSample: DivFC = (props) => {
 }
 
 
-const OverlaySample: React.FC<Popover2Props> = (props) => {
+const OverlaySample: React.FC<PopoverProps> = (props) => {
 
     const [isAlertOpen, setAlertOpen] = React.useState(false)
     const [isDialogOpen, setDialogOpen] = React.useState(false)
@@ -197,11 +197,11 @@ const OverlaySample: React.FC<Popover2Props> = (props) => {
         </Menu>
     );
     return (<>
-        <Popover2 content={MenuSample} placement="right" {...props} />
+        <Popover content={MenuSample} placement="right" {...props} />
         <DialogSample isOpen={isDialogOpen} onClose={() => setDialogOpen(false)} />
         <AlertSample isOpen={isAlertOpen} onClose={() => setAlertOpen(false)} />
         <DrawerSample isOpen={isDrawerOpen} onClose={() => setDrawerOpen(false)} />
-        <Toaster position="top-right" children={Toasts} />
+        <OverlayToaster>Toasts</OverlayToaster>
     </>);
 }
 

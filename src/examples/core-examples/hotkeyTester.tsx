@@ -16,7 +16,7 @@
 
 import * as React from "react";
 
-import { Code, getKeyComboString, KeyCombo } from "@blueprintjs/core";
+import {Code, getKeyComboString, KeyCombo, KeyComboTag} from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
 
 export interface IHotkeyTesterState {
@@ -50,7 +50,7 @@ export class HotkeyTester extends React.PureComponent<ExampleProps, IHotkeyTeste
         } else {
             return (
                 <>
-                    <KeyCombo combo={combo} />
+                    {/*<KeyComboTag combo={combo} />*/}
                     <Code>{combo}</Code>
                 </>
             );

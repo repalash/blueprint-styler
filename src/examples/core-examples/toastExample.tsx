@@ -23,13 +23,13 @@ import {
     H5,
     HTMLSelect,
     Intent,
-    IToasterProps,
+    OverlayToasterProps,
     Label,
     NumericInput,
     Position,
     ProgressBar,
     Switch,
-    Toaster,
+    OverlayToaster,
     ToasterPosition,
     ToastProps,
 } from "@blueprintjs/core";
@@ -48,8 +48,8 @@ const POSITIONS = [
     Position.BOTTOM_RIGHT,
 ];
 
-export class ToastExample extends React.PureComponent<ExampleProps<IBlueprintExampleData>, IToasterProps> {
-    public state: IToasterProps = {
+export class ToastExample extends React.PureComponent<ExampleProps<IBlueprintExampleData>, OverlayToasterProps> {
+    public state: OverlayToasterProps = {
         autoFocus: false,
         canEscapeKeyClear: true,
         position: Position.TOP,
@@ -110,10 +110,10 @@ export class ToastExample extends React.PureComponent<ExampleProps<IBlueprintExa
         },
     ];
 
-    private toaster: Toaster;
+    private toaster: OverlayToaster;
 
     private refHandlers = {
-        toaster: (ref: Toaster) => (this.toaster = ref),
+        toaster: (ref: OverlayToaster) => (this.toaster = ref),
     };
 
     private progressToastInterval?: number;
@@ -131,7 +131,7 @@ export class ToastExample extends React.PureComponent<ExampleProps<IBlueprintExa
             <Example options={this.renderOptions()} {...this.props}>
                 {this.TOAST_BUILDERS.map(this.renderToastDemo, this)}
                 <Button onClick={this.handleProgressToast} text="Upload file" />
-                <Toaster {...this.state} ref={this.refHandlers.toaster} />
+                <OverlayToaster {...this.state} ref={this.refHandlers.toaster} />
             </Example>
         );
     }

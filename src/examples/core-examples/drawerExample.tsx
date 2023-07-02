@@ -39,7 +39,7 @@ import {
     handleStringChange,
     handleValueChange,
 } from "@blueprintjs/docs-theme";
-import { ContextMenu2 } from "@blueprintjs/popover2";
+import { ContextMenu } from "@blueprintjs/core";
 
 import { IBlueprintExampleData } from "../../tags/types";
 
@@ -122,7 +122,7 @@ export class DrawerExample extends React.PureComponent<ExampleProps<IBlueprintEx
                                 can build upon. And the enterprise data foundation goes where the business drives it.
                             </p>
                             <p>Start the revolution. Unleash the power of data integration with Palantir Foundry.</p>
-                            <ContextMenu2
+                            <ContextMenu
                                 content={
                                     <Menu>
                                         <MenuItem text="Menu Item 1" />
@@ -130,9 +130,9 @@ export class DrawerExample extends React.PureComponent<ExampleProps<IBlueprintEx
                                 }
                             >
                                 <Button onClick={this.handleClose}>
-                                    Right Click for a <Code>&lt;ContextMenu2 /&gt;</Code>
+                                    Right Click for a <Code>&lt;ContextMenu /&gt;</Code>
                                 </Button>
-                            </ContextMenu2>
+                            </ContextMenu>
                         </div>
                     </div>
                     <div className={Classes.DRAWER_FOOTER}>Footer</div>

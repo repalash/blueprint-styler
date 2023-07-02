@@ -18,7 +18,7 @@ import * as React from "react";
 
 import { Button, Menu, MenuDivider, MenuItem } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Popover2 } from "@blueprintjs/popover2";
+import { Popover } from "@blueprintjs/core";
 
 export class DropdownMenuExample extends React.PureComponent<ExampleProps> {
     public render() {
@@ -37,9 +37,9 @@ export class DropdownMenuExample extends React.PureComponent<ExampleProps> {
         );
         return (
             <Example options={false} {...this.props}>
-                <Popover2 content={exampleMenu} placement="right-end">
+                <Popover content={exampleMenu} placement="right-end">
                     <Button icon="share" text="Open in..." />
-                </Popover2>
+                </Popover>
             </Example>
         );
     }

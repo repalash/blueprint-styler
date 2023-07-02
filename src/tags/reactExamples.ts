@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IExampleMap, IExampleProps } from "@blueprintjs/docs-theme";
+import { ExampleMap, ExampleProps } from "@blueprintjs/docs-theme";
 import { IBlueprintExampleData } from "./types";
 
 import * as CoreExamples from "../examples/core-examples";
@@ -9,16 +9,16 @@ import * as TableExamples from "../examples/table-examples";
 import * as TimezoneExamples from "../examples/timezone-examples";
 import { getTheme } from '../components/BlueprintStylerApp';
 
-/** Interface for `IExampleProps` `data` in this here Blueprint docs-app. */
+/** Interface for `ExampleProps` `data` in this here Blueprint docs-app. */
 
 
 const SRC_HREF_BASE = "https://github.com/palantir/blueprint/blob/develop/packages/docs-app/src/examples";
 
 function getPackageExamples(
     packageName: string,
-    packageExamples: { [name: string]: React.ComponentClass<IExampleProps<IBlueprintExampleData>> },
+    packageExamples: { [name: string]: React.ComponentClass<ExampleProps<IBlueprintExampleData>> },
 ) {
-    const ret: IExampleMap = {};
+    const ret: ExampleMap = {};
     for (const exampleName of Object.keys(packageExamples)) {
         const example = packageExamples[exampleName];
         const fileName = exampleName.charAt(0).toLowerCase() + exampleName.slice(1) + ".tsx";
@@ -30,7 +30,7 @@ function getPackageExamples(
     return ret;
 }
 
-export const reactExamples: IExampleMap = (() => {
+export const reactExamples: ExampleMap = (() => {
     return {
         ...getPackageExamples("core", CoreExamples as any),
         ...getPackageExamples("datetime", DateExamples as any),

@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview This component is DEPRECATED, and the code is frozen.
- * All changes & bugfixes should be made to Popover2 instead.
+ * All changes & bugfixes should be made to Popover instead.
  */
 
 
@@ -40,7 +40,7 @@ import {
     PopoverInteractionKind,
     PopoverPosition,
     PopperBoundary,
-    PopperModifiers,
+    PopperModifierOverrides,
     RadioGroup,
     Slider,
     Switch,
@@ -80,7 +80,7 @@ const VALID_POSITIONS: PopoverPosition[] = [
 
 const POPPER_DOCS = "https://popper.js.org/popper-documentation.html#modifiers";
 
-export interface IPopoverExampleState {
+export interface PopoverExampleState {
     boundary?: PopperBoundary;
     canEscapeKeyClose?: boolean;
     exampleIndex?: number;
@@ -89,15 +89,15 @@ export interface IPopoverExampleState {
     interactionKind?: PopoverInteractionKind;
     isOpen?: boolean;
     minimal?: boolean;
-    modifiers?: PopperModifiers;
+    modifiers?: PopperModifierOverrides;
     position?: PopoverPosition;
     sliderValue?: number;
     usePortal?: boolean;
 }
 
-export class PopoverExample extends React.PureComponent<ExampleProps, IPopoverExampleState> {
-    public state: IPopoverExampleState = {
-        boundary: "viewport",
+export class PopoverExample extends React.PureComponent<ExampleProps, PopoverExampleState> {
+    public state: PopoverExampleState = {
+        // boundary: "viewport",
         canEscapeKeyClose: true,
         exampleIndex: 0,
         hasBackdrop: false,
@@ -108,7 +108,7 @@ export class PopoverExample extends React.PureComponent<ExampleProps, IPopoverEx
         modifiers: {
             arrow: { enabled: true },
             flip: { enabled: true },
-            keepTogether: { enabled: true },
+            // keepTogether: { enabled: true },
             preventOverflow: { enabled: true },
         },
         position: "auto",
@@ -222,7 +222,7 @@ export class PopoverExample extends React.PureComponent<ExampleProps, IPopoverEx
                     <div style={{ marginTop: 5 }} />
                     <HTMLSelect
                         disabled={!preventOverflow.enabled}
-                        value={this.state.boundary}
+                        // value={this.state.boundary}
                         onChange={this.handleBoundaryChange}
                     >
                         <option value="scrollParent">scrollParent</option>
@@ -291,7 +291,7 @@ export class PopoverExample extends React.PureComponent<ExampleProps, IPopoverEx
 
     private handleSliderChange = (value: number) => this.setState({ sliderValue: value });
 
-    private getModifierChangeHandler(name: keyof PopperModifiers) {
+    private getModifierChangeHandler(name: keyof PopperModifierOverrides) {
         return handleBooleanChange(enabled => {
             this.setState({
                 modifiers: {

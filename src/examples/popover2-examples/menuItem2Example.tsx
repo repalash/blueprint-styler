@@ -18,7 +18,7 @@ import * as React from "react";
 
 import { Classes, Code, H5, HTMLSelect, Intent, Label, Menu, Switch } from "@blueprintjs/core";
 import { Example, ExampleProps, handleBooleanChange, handleValueChange } from "@blueprintjs/docs-theme";
-import { MenuItem2, MenuItem2Props } from "@blueprintjs/popover2";
+import { MenuItem, MenuItemProps } from "@blueprintjs/core";
 
 import { PropCodeTooltip } from "../../common/propCodeTooltip";
 import { IntentSelect } from "../core-examples/common/intentSelect";
@@ -31,7 +31,7 @@ export function MenuItem2Example(props: ExampleProps) {
     const [intent, setIntent] = React.useState<Intent>("none");
     const [iconEnabled, setIconEnabled] = React.useState(true);
     const [submenuEnabled, setSubmenuEnabled] = React.useState(true);
-    const [roleStructure, setRoleStructure] = React.useState<MenuItem2Props["roleStructure"]>("menuitem");
+    const [roleStructure, setRoleStructure] = React.useState<MenuItemProps["roleStructure"]>("menuitem");
 
     const isSelectedOptionAvailable = roleStructure === "listoption" && !iconEnabled;
 
@@ -74,7 +74,7 @@ export function MenuItem2Example(props: ExampleProps) {
     return (
         <Example className="docs-menu-example" options={options} {...props}>
             <Menu className={Classes.ELEVATION_1} large={large}>
-                <MenuItem2
+                <MenuItem
                     disabled={disabled}
                     icon={iconEnabled ? "cog" : undefined}
                     intent={intent}
@@ -85,8 +85,8 @@ export function MenuItem2Example(props: ExampleProps) {
                     children={
                         submenuEnabled ? (
                             <>
-                                <MenuItem2 icon="add" text="Add new application" />
-                                <MenuItem2 icon="remove" text="Remove application" />
+                                <MenuItem icon="add" text="Add new application" />
+                                <MenuItem icon="remove" text="Remove application" />
                             </>
                         ) : undefined
                     }

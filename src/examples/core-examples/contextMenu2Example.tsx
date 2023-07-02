@@ -17,13 +17,21 @@
 import classNames from "classnames";
 import * as React from "react";
 
-import { Classes, Menu, MenuDivider, MenuItem } from "@blueprintjs/core";
-import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { ContextMenu2, ContextMenu2ChildrenProps, ContextMenu2ContentProps, Tooltip2 } from "@blueprintjs/popover2";
+import {
+    Classes,
+    ContextMenu,
+    ContextMenuChildrenProps,
+    ContextMenuContentProps,
+    Menu,
+    MenuDivider,
+    MenuItem,
+    Tooltip
+} from "@blueprintjs/core";
+import {Example, ExampleProps} from "@blueprintjs/docs-theme";
 
 export const ContextMenu2Example: React.FC<ExampleProps> = props => {
     const renderContent = React.useCallback(
-        ({ targetOffset }: ContextMenu2ContentProps) => (
+        ({ targetOffset }: ContextMenuContentProps) => (
             <Menu>
                 <MenuItem icon="select" text="Select all" />
                 <MenuItem icon="insert" text="Insert...">
@@ -51,9 +59,9 @@ export const ContextMenu2Example: React.FC<ExampleProps> = props => {
     );
 
     return (
-        <ContextMenu2 content={renderContent}>
+        <ContextMenu content={renderContent}>
             <Example className="docs-context-menu-example" options={false} {...props}>
-                <Tooltip2
+                <Tooltip
                     content={
                         <div style={{ maxWidth: 230, textAlign: "center" }}>
                             This tooltip will close when you open the node's context menu
@@ -61,16 +69,16 @@ export const ContextMenu2Example: React.FC<ExampleProps> = props => {
                     }
                 >
                     <GraphNode />
-                </Tooltip2>
+                </Tooltip>
                 <span className={Classes.TEXT_MUTED}>Right-click on node or background.</span>
             </Example>
-        </ContextMenu2>
+        </ContextMenu>
     );
 };
 
 const GraphNode: React.FC = () => {
     const children = React.useCallback(
-        (props: ContextMenu2ChildrenProps) => (
+        (props: ContextMenuChildrenProps) => (
             <div
                 className={classNames("docs-context-menu-node", props.className, {
                     "docs-context-menu-open": props.contentProps.isOpen,
@@ -85,7 +93,7 @@ const GraphNode: React.FC = () => {
     );
 
     return (
-        <ContextMenu2
+        <ContextMenu
             content={
                 <Menu>
                     <MenuItem icon="search-around" text="Search around..." />
@@ -98,6 +106,6 @@ const GraphNode: React.FC = () => {
             }
         >
             {children}
-        </ContextMenu2>
+        </ContextMenu>
     );
 };

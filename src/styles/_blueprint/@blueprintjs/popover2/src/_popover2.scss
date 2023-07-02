@@ -50,7 +50,7 @@ $dark-popover2-arrow-box-shadow:
   }
 
   &.#{$ns}-minimal {
-    // Popover2 with no obvious trigger will never have margin because the arrow is hidden,
+    // Popover with no obvious trigger will never have margin because the arrow is hidden,
     // so it is safe to remove.
     margin: 0 !important; /* stylelint-disable-line declaration-no-important */
 

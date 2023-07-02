@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview This component is DEPRECATED, and the code is frozen.
- * All changes & bugfixes should be made to Breadcrumbs2 instead.
+ * All changes & bugfixes should be made to Breadcrumbs instead.
  */
 
 

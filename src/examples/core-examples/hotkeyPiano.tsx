@@ -87,180 +87,180 @@ export class HotkeyPiano extends React.PureComponent<ExampleProps, IHotkeyPianoS
     }
 
     public renderHotkeys() {
-        return (
-            <Hotkeys tabIndex={null}>
-                <Hotkey global={true} label="Focus the piano" combo="shift + P" onKeyDown={this.focusPiano} />
-
-                <Hotkey
-                    group="Piano"
-                    label="Play a C5"
-                    combo="Q"
-                    onKeyDown={this.setKey(0, true)}
-                    onKeyUp={this.setKey(0, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a C#5"
-                    combo="2"
-                    onKeyDown={this.setKey(1, true)}
-                    onKeyUp={this.setKey(1, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a D5"
-                    combo="W"
-                    onKeyDown={this.setKey(2, true)}
-                    onKeyUp={this.setKey(2, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a D#5"
-                    combo="3"
-                    onKeyDown={this.setKey(3, true)}
-                    onKeyUp={this.setKey(3, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a E5"
-                    combo="E"
-                    onKeyDown={this.setKey(4, true)}
-                    onKeyUp={this.setKey(4, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a F5"
-                    combo="R"
-                    onKeyDown={this.setKey(5, true)}
-                    onKeyUp={this.setKey(5, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a F#5"
-                    combo="5"
-                    onKeyDown={this.setKey(6, true)}
-                    onKeyUp={this.setKey(6, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a G5"
-                    combo="T"
-                    onKeyDown={this.setKey(7, true)}
-                    onKeyUp={this.setKey(7, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a G#5"
-                    combo="6"
-                    onKeyDown={this.setKey(8, true)}
-                    onKeyUp={this.setKey(8, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a A5"
-                    combo="Y"
-                    onKeyDown={this.setKey(9, true)}
-                    onKeyUp={this.setKey(9, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a A#5"
-                    combo="7"
-                    onKeyDown={this.setKey(10, true)}
-                    onKeyUp={this.setKey(10, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a B5"
-                    combo="U"
-                    onKeyDown={this.setKey(11, true)}
-                    onKeyUp={this.setKey(11, false)}
-                />
-
-                <Hotkey
-                    group="Piano"
-                    label="Play a C4"
-                    combo="Z"
-                    onKeyDown={this.setKey(12, true)}
-                    onKeyUp={this.setKey(12, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a C#4"
-                    combo="S"
-                    onKeyDown={this.setKey(13, true)}
-                    onKeyUp={this.setKey(13, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a D4"
-                    combo="X"
-                    onKeyDown={this.setKey(14, true)}
-                    onKeyUp={this.setKey(14, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a D#4"
-                    combo="D"
-                    onKeyDown={this.setKey(15, true)}
-                    onKeyUp={this.setKey(15, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a E4"
-                    combo="C"
-                    onKeyDown={this.setKey(16, true)}
-                    onKeyUp={this.setKey(16, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a F4"
-                    combo="V"
-                    onKeyDown={this.setKey(17, true)}
-                    onKeyUp={this.setKey(17, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a F#4"
-                    combo="G"
-                    onKeyDown={this.setKey(18, true)}
-                    onKeyUp={this.setKey(18, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a G4"
-                    combo="B"
-                    onKeyDown={this.setKey(19, true)}
-                    onKeyUp={this.setKey(19, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a G#4"
-                    combo="H"
-                    onKeyDown={this.setKey(20, true)}
-                    onKeyUp={this.setKey(20, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a A4"
-                    combo="N"
-                    onKeyDown={this.setKey(21, true)}
-                    onKeyUp={this.setKey(21, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a A#4"
-                    combo="J"
-                    onKeyDown={this.setKey(22, true)}
-                    onKeyUp={this.setKey(22, false)}
-                />
-                <Hotkey
-                    group="Piano"
-                    label="Play a B4"
-                    combo="M"
-                    onKeyDown={this.setKey(23, true)}
-                    onKeyUp={this.setKey(23, false)}
-                />
-            </Hotkeys>
+        return ( <></>
+            // <Hotkeys tabIndex={null}>
+            //     <Hotkey global={true} label="Focus the piano" combo="shift + P" onKeyDown={this.focusPiano} />
+            //
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a C5"
+            //         combo="Q"
+            //         onKeyDown={this.setKey(0, true)}
+            //         onKeyUp={this.setKey(0, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a C#5"
+            //         combo="2"
+            //         onKeyDown={this.setKey(1, true)}
+            //         onKeyUp={this.setKey(1, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a D5"
+            //         combo="W"
+            //         onKeyDown={this.setKey(2, true)}
+            //         onKeyUp={this.setKey(2, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a D#5"
+            //         combo="3"
+            //         onKeyDown={this.setKey(3, true)}
+            //         onKeyUp={this.setKey(3, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a E5"
+            //         combo="E"
+            //         onKeyDown={this.setKey(4, true)}
+            //         onKeyUp={this.setKey(4, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a F5"
+            //         combo="R"
+            //         onKeyDown={this.setKey(5, true)}
+            //         onKeyUp={this.setKey(5, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a F#5"
+            //         combo="5"
+            //         onKeyDown={this.setKey(6, true)}
+            //         onKeyUp={this.setKey(6, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a G5"
+            //         combo="T"
+            //         onKeyDown={this.setKey(7, true)}
+            //         onKeyUp={this.setKey(7, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a G#5"
+            //         combo="6"
+            //         onKeyDown={this.setKey(8, true)}
+            //         onKeyUp={this.setKey(8, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a A5"
+            //         combo="Y"
+            //         onKeyDown={this.setKey(9, true)}
+            //         onKeyUp={this.setKey(9, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a A#5"
+            //         combo="7"
+            //         onKeyDown={this.setKey(10, true)}
+            //         onKeyUp={this.setKey(10, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a B5"
+            //         combo="U"
+            //         onKeyDown={this.setKey(11, true)}
+            //         onKeyUp={this.setKey(11, false)}
+            //     />
+            //
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a C4"
+            //         combo="Z"
+            //         onKeyDown={this.setKey(12, true)}
+            //         onKeyUp={this.setKey(12, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a C#4"
+            //         combo="S"
+            //         onKeyDown={this.setKey(13, true)}
+            //         onKeyUp={this.setKey(13, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a D4"
+            //         combo="X"
+            //         onKeyDown={this.setKey(14, true)}
+            //         onKeyUp={this.setKey(14, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a D#4"
+            //         combo="D"
+            //         onKeyDown={this.setKey(15, true)}
+            //         onKeyUp={this.setKey(15, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a E4"
+            //         combo="C"
+            //         onKeyDown={this.setKey(16, true)}
+            //         onKeyUp={this.setKey(16, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a F4"
+            //         combo="V"
+            //         onKeyDown={this.setKey(17, true)}
+            //         onKeyUp={this.setKey(17, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a F#4"
+            //         combo="G"
+            //         onKeyDown={this.setKey(18, true)}
+            //         onKeyUp={this.setKey(18, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a G4"
+            //         combo="B"
+            //         onKeyDown={this.setKey(19, true)}
+            //         onKeyUp={this.setKey(19, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a G#4"
+            //         combo="H"
+            //         onKeyDown={this.setKey(20, true)}
+            //         onKeyUp={this.setKey(20, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a A4"
+            //         combo="N"
+            //         onKeyDown={this.setKey(21, true)}
+            //         onKeyUp={this.setKey(21, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a A#4"
+            //         combo="J"
+            //         onKeyDown={this.setKey(22, true)}
+            //         onKeyUp={this.setKey(22, false)}
+            //     />
+            //     <Hotkey
+            //         group="Piano"
+            //         label="Play a B4"
+            //         combo="M"
+            //         onKeyDown={this.setKey(23, true)}
+            //         onKeyUp={this.setKey(23, false)}
+            //     />
+            // </Hotkeys>
         );
     }
 

@@ -3,7 +3,7 @@ import * as CustomExamples from '../examples/custom-examples';
 import * as CoreExamples from '../examples/core-examples';
 import * as DateTimeExamples from '../examples/datetime-examples';
 import * as DateTime2Examples from '../examples/datetime2-examples';
-import * as Popover2Examples from '../examples/popover2-examples';
+import * as PopoverExamples from '../examples/popover2-examples';
 import * as SelectExamples from '../examples/select-examples';
 import * as TableExamples from '../examples/table-examples';
 // import * as TimezoneExamples from '../examples/timezone-examples';
@@ -23,7 +23,7 @@ export const allExamples: GroupedComponentSets = [
         ['Typography', [[CustomExamples.TypographyExample, 'TypographyExample'],]],
     ]],
     ['Components', [
-        ['Breadcrumbs', [[Popover2Examples.Breadcrumbs2Example, 'Breadcrumbs2Example'],]],
+        ['Breadcrumbs', [[PopoverExamples.Breadcrumbs2Example, 'Breadcrumbs2Example'],]],
         ['Button', [
             [CoreExamples.ButtonsExample, 'ButtonsExample'],
             [CoreExamples.ButtonsIconsExample, 'ButtonsIconsExample'],
@@ -89,21 +89,21 @@ export const allExamples: GroupedComponentSets = [
 
     ['Overlays', [
         ['Overlay', [[CoreExamples.OverlayExample, 'OverlayExample'],]],
-        ['Portal', [[Popover2Examples.Popover2PortalExample, 'Popover2PortalExample'],]],
+        ['Portal', [[PopoverExamples.PopoverPortalExample, 'PopoverPortalExample'],]],
         ['Alert', [[CoreExamples.AlertExample, 'AlertExample'],]],
         // ['Context menu', [[CoreExamples.ContextMenuExample, 'ContextMenuExample'],]], // Decorator
         ['Dialog', [[CoreExamples.DialogExample, 'DialogExample'],]],
         ['Drawer', [[CoreExamples.DrawerExample, 'DrawerExample'],]],
         ['Popover', [
-            // [Popover2Examples.Popover2DismissExample, 'Popover2DismissExample'],
-            [Popover2Examples.Popover2Example, 'Popover2Example'],
-            [Popover2Examples.Popover2InteractionKindExample, 'Popover2InteractionKindExample'],
-            [Popover2Examples.Popover2MinimalExample, 'Popover2MinimalExample'],
-            [Popover2Examples.Popover2PlacementExample, 'Popover2PlacementExample'],
-            [Popover2Examples.Popover2SizingExample, 'Popover2SizingExample'],
+            // [PopoverExamples.PopoverDismissExample, 'PopoverDismissExample'],
+            [PopoverExamples.PopoverExample, 'PopoverExample'],
+            [PopoverExamples.PopoverInteractionKindExample, 'PopoverInteractionKindExample'],
+            [PopoverExamples.PopoverMinimalExample, 'PopoverMinimalExample'],
+            [PopoverExamples.PopoverPlacementExample, 'PopoverPlacementExample'],
+            [PopoverExamples.PopoverSizingExample, 'PopoverSizingExample'],
         ]],
         ['Toast', [[CoreExamples.ToastExample, 'ToastExample'],]],
-        ['Tooltip', [[Popover2Examples.Tooltip2Example, 'Tooltip2Example'],]],
+        ['Tooltip', [[PopoverExamples.Tooltip2Example, 'Tooltip2Example'],]],
     ]],
 
     ['Other', [

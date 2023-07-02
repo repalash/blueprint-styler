@@ -18,29 +18,29 @@ import * as React from "react";
 
 import { Button, Intent } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Popover2, Popover2Props } from "@blueprintjs/popover2";
+import { Popover, PopoverProps } from "@blueprintjs/core";
 
 import { FileMenu } from "../core-examples/common/fileMenu";
 
-export class Popover2MinimalExample extends React.PureComponent<ExampleProps> {
-    public static displayName = "Popover2MinimalExample";
+export class PopoverMinimalExample extends React.PureComponent<ExampleProps> {
+    public static displayName = "PopoverMinimalExample";
 
     public render() {
-        const baseProps: Partial<Popover2Props> = { content: <FileMenu />, placement: "bottom-end" };
+        const baseProps: Partial<PopoverProps> = { content: <FileMenu />, placement: "bottom-end" };
 
         return (
             <Example options={false} {...this.props}>
-                <Popover2
+                <Popover
                     {...baseProps}
                     minimal={true}
                     renderTarget={({ isOpen, ref, ...p }) => (
-                        <Button {...p} active={isOpen} elementRef={ref} intent={Intent.PRIMARY} text="Minimal" />
+                        <Button {...p} active={isOpen} ref={ref} intent={Intent.PRIMARY} text="Minimal" />
                     )}
                 />
-                <Popover2
+                <Popover
                     {...baseProps}
                     renderTarget={({ isOpen, ref, ...p }) => (
-                        <Button {...p} active={isOpen} elementRef={ref} text="Default" />
+                        <Button {...p} active={isOpen} ref={ref} text="Default" />
                     )}
                 />
             </Example>

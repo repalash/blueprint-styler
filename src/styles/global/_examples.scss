@@ -260,7 +260,7 @@
   height: 200%;
 }
 
-#{example("Popover2Example")},
+#{example("PopoverExample")},
 #{example("PopoverExample")} {
   .docs-example {
     display: block;
@@ -286,7 +286,7 @@
   }
 }
 
-#{example("Popover2DismissExample")},
+#{example("PopoverDismissExample")},
 #{example("PopoverDismissExample")} {
   height: 220px;
 
@@ -505,7 +505,7 @@
 
 #{example("ToastExample")} {
   .docs-example {
-    // necessary for inline Toaster (usePortal={false})
+    // necessary for inline OverlayToaster (usePortal={false})
     position: relative;
   }
 }

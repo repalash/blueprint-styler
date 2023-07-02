@@ -18,12 +18,12 @@ import * as React from "react";
 
 import { Button, Intent } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Popover2, Popover2InteractionKind } from "@blueprintjs/popover2";
+import { Popover, PopoverInteractionKind } from "@blueprintjs/core";
 
 import { FileMenu } from "../core-examples/common/fileMenu";
 
-export class Popover2InteractionKindExample extends React.PureComponent<ExampleProps> {
-    public static displayName = "Popover2InteractionKindExample";
+export class PopoverInteractionKindExample extends React.PureComponent<ExampleProps> {
+    public static displayName = "PopoverInteractionKindExample";
 
     public render() {
         return (
@@ -38,18 +38,18 @@ export class Popover2InteractionKindExample extends React.PureComponent<ExampleP
         );
     }
 
-    private renderPopover(interactionKind: Popover2InteractionKind) {
+    private renderPopover(interactionKind: PopoverInteractionKind) {
         // MenuItem's default shouldDismissPopover={true} behavior is confusing
         // in this example, since it introduces an additional way popovers can
         // close. set it to false here for clarity.
         return (
-            <Popover2
+            <Popover
                 enforceFocus={false}
                 placement="bottom-end"
                 interactionKind={interactionKind}
                 content={<FileMenu shouldDismissPopover={false} />}
                 renderTarget={({ isOpen, ref, ...p }) => (
-                    <Button {...p} active={isOpen} elementRef={ref} intent={Intent.PRIMARY} text={interactionKind} />
+                    <Button {...p} active={isOpen} ref={ref} intent={Intent.PRIMARY} text={interactionKind} />
                 )}
             />
         );

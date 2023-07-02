@@ -18,21 +18,21 @@ import * as React from "react";
 
 import { Button } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Popover2 } from "@blueprintjs/popover2";
+import { Popover } from "@blueprintjs/core";
 
 import { FileMenu } from "../core-examples/common/fileMenu";
 
-export class Popover2SizingExample extends React.PureComponent<ExampleProps> {
-    public static displayName = "Popover2SizingExample";
+export class PopoverSizingExample extends React.PureComponent<ExampleProps> {
+    public static displayName = "PopoverSizingExample";
 
     public render() {
         return (
             <Example options={false} {...this.props}>
-                <Popover2
+                <Popover
                     content={<FileMenu className="docs-popover2-sizing-example" />}
                     placement="bottom-end"
                     renderTarget={({ isOpen, ref, ...p }) => (
-                        <Button {...p} active={isOpen} elementRef={ref} text="Open..." />
+                        <Button {...p} active={isOpen} ref={ref} text="Open..." />
                     )}
                 />
             </Example>

@@ -18,7 +18,7 @@ import * as React from "react";
 
 import { Button, ButtonGroup, H1, Switch } from "@blueprintjs/core";
 import { Example, ExampleProps } from "@blueprintjs/docs-theme";
-import { Classes, Popover2, Tooltip2 } from "@blueprintjs/popover2";
+import { Classes, Popover, Tooltip } from "@blueprintjs/core";
 
 export interface ITooltip2ExampleState {
     isOpen: boolean;
@@ -49,38 +49,38 @@ export class Tooltip2Example extends React.PureComponent<ExampleProps, ITooltip2
             <Example options={false} {...this.props}>
                 <div>
                     Inline text can have{" "}
-                    <Tooltip2 className={Classes.TOOLTIP2_INDICATOR} content={jsxContent}>
+                    <Tooltip className={Classes.TOOLTIP_INDICATOR} content={jsxContent}>
                         a tooltip.
-                    </Tooltip2>
+                    </Tooltip>
                 </div>
                 <div>
-                    <Tooltip2 content={lotsOfText}>Or, hover anywhere over this whole line.</Tooltip2>
+                    <Tooltip content={lotsOfText}>Or, hover anywhere over this whole line.</Tooltip>
                 </div>
                 <div>
                     This line's tooltip{" "}
-                    <Tooltip2 className={Classes.TOOLTIP2_INDICATOR} content={<span>disabled</span>} disabled={true}>
+                    <Tooltip className={Classes.TOOLTIP_INDICATOR} content={<span>disabled</span>} disabled={true}>
                         is disabled.
-                    </Tooltip2>
+                    </Tooltip>
                 </div>
                 <div>
                     This line's tooltip{" "}
-                    <Tooltip2
-                        className={Classes.TOOLTIP2_INDICATOR}
+                    <Tooltip
+                        className={Classes.TOOLTIP_INDICATOR}
                         content={<span>This tooltip has the minimal style applied!</span>}
                         minimal={true}
                     >
                         is minimal.
-                    </Tooltip2>
+                    </Tooltip>
                 </div>
                 <div>
                     This line's tooltip{" "}
-                    <Tooltip2
-                        className={Classes.TOOLTIP2_INDICATOR}
+                    <Tooltip
+                        className={Classes.TOOLTIP_INDICATOR}
                         content={<span>BRRAAAIINS</span>}
                         isOpen={this.state.isOpen}
                     >
                         is controlled by external state.
-                    </Tooltip2>
+                    </Tooltip>
                     <Switch
                         checked={this.state.isOpen}
                         label="Open"
@@ -89,70 +89,70 @@ export class Tooltip2Example extends React.PureComponent<ExampleProps, ITooltip2
                     />
                 </div>
                 <div>
-                    <Tooltip2
-                        className={Classes.TOOLTIP2_INDICATOR}
+                    <Tooltip
+                        className={Classes.TOOLTIP_INDICATOR}
                         content="primary"
                         intent="primary"
                         placement="left"
                         usePortal={false}
                     >
                         Available
-                    </Tooltip2>{" "}
-                    <Tooltip2
-                        className={Classes.TOOLTIP2_INDICATOR}
+                    </Tooltip>{" "}
+                    <Tooltip
+                        className={Classes.TOOLTIP_INDICATOR}
                         content="success"
                         intent="success"
                         placement="top"
                         usePortal={false}
                     >
                         in the full
-                    </Tooltip2>{" "}
-                    <Tooltip2
-                        className={Classes.TOOLTIP2_INDICATOR}
+                    </Tooltip>{" "}
+                    <Tooltip
+                        className={Classes.TOOLTIP_INDICATOR}
                         content="warning"
                         intent="warning"
                         placement="bottom"
                         usePortal={false}
                     >
                         range of
-                    </Tooltip2>{" "}
-                    <Tooltip2
-                        className={Classes.TOOLTIP2_INDICATOR}
+                    </Tooltip>{" "}
+                    <Tooltip
+                        className={Classes.TOOLTIP_INDICATOR}
                         content="danger"
                         intent="danger"
                         placement="right"
                         usePortal={false}
                     >
                         visual intents!
-                    </Tooltip2>
+                    </Tooltip>
                 </div>
                 <br />
-                <Popover2
+                <Popover
                     content={<H1>Popover!</H1>}
                     placement="right"
-                    popoverClassName={Classes.POPOVER2_CONTENT_SIZING}
+                    popoverClassName={Classes.POPOVER_CONTENT_SIZING}
                 >
-                    <Tooltip2
+                    <Tooltip
                         content={<span>This button also has a popover!</span>}
                         openOnTargetFocus={false}
                         placement="right"
                         usePortal={false}
                     >
                         <Button intent="success" text="Hover and click me" />
-                    </Tooltip2>
-                </Popover2>
+                    </Tooltip>
+                </Popover>
                 <br />
 
                 <ButtonGroup>
-                    <Tooltip2 content="Each" placement="bottom">
+                    <Tooltip content="Each" placement="bottom">
                         <Button intent="primary" text="Group" />
-                    </Tooltip2>
-                    <Tooltip2 content="has" placement="bottom">
+                    </Tooltip>
+                    <Tooltip content="has" placement="bottom">
                         <Button intent="primary" text="of" />
-                    </Tooltip2>
-                    <Tooltip2 content="a tooltip" placement="bottom">
+                    </Tooltip>
+                    <Tooltip content="a tooltip" placement="bottom">
                         <Button intent="primary" text="buttons" />
-                    </Tooltip2>
+                    </Tooltip>
                 </ButtonGroup>
             </Example>
         );
